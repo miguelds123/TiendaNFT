@@ -1,0 +1,63 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<MVCProyectoNFT.Application.DTOs.PaisDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<br>
+
+<br>
+
+<h1 style="margin-right: 10px">Paises</h1>
+
+<br />
+
+<div>
+    <a href="/Pais/Create" class="btn btn-outline-primary">
+        Crear
+    </a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-success   bi-pencil-square   " }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @class = "btn btn-secondary   bi-eye-fill   " }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger   bi-trash  " })
+                    
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page =>
+                    Url.Action("Index", new { page }), new PagedListRenderOptions
+                {
+                    Display = PagedListDisplayMode.Always,
+                    MaximumPageNumbersToDisplay = 5,
+                    LiElementClasses = new String[] { "page-item" },
+                    PageClasses = new String[] { "page-link" }
+                })

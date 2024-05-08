@@ -1,0 +1,109 @@
+﻿@model MVCProyectoNFT.Application.DTOs.PaisDTO
+
+@{
+    
+    ViewData["Title"] = "Create";
+}
+
+<br />
+<br />
+<h1>Crear País</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="myForm" asp-action="Create" asp-antiforgery="true"
+              data-ajax="true"
+              data-ajax-method="POST"
+              data-ajax-begin="onBegin"
+              data-ajax-failure="onFailure"
+              data-ajax-success="onSuccess"
+              data-ajax-complete="onComplete">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <br />
+
+            <div class="button-container" style="display: flex;">
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+
+                <div>
+                    <a href="/Pais" class="btn btn-outline-primary">
+                        Volver
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function onBegin() {
+            console.log("onBegin")
+        }
+
+        function onFailure(response) {
+            console.log("onFailure")
+
+
+            toastr.options.closeDuration = 2000;
+            toastr.options.closeEasing = 'swing';
+            toastr.options.progressBar = true;
+            toastr.error('A ocurrido un error al intentar realizar el registro')
+
+
+        }
+
+        function onSuccess(response) {
+            console.log("onSuccess")
+            // Config
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            // mensaje
+            toastr["success"]("El registro fue salvado", "Atención")
+
+        }
+
+        function onComplete() {
+            console.log("onComplete")
+            // Limpiar los campos del formulario
+            document.getElementById("myForm").reset();
+
+            // Mostrar un mensaje de éxito
+            toastr.info('Los campos del formulario se han limpiado.');
+        }
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

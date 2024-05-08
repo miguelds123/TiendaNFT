@@ -1,0 +1,204 @@
+﻿@{
+    ViewData["Title"] = "Grafico Ventas";
+}
+
+
+<div class="container">
+    <div class="card">
+        <h5 class="card-header">Ventas</h5>
+        <div class="card-body">
+            <form class="row g-3" asp-action="VentasXCliente"
+                  asp-controller="Grafico"
+                  asp-antiforgery="true"
+                  method="post"
+                  asp-antiforgery="true" onsubmit="return validateForm()">
+
+                <label for="fechaInicio">Fecha de Inicio:</label>
+                <input type="date" id="fechaInicio" name="fechaInicio" required>
+
+                <label for="fechaFin">Fecha de Finalización:</label>
+                <input type="date" id="fechaFin" name="fechaFin" required>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-success">Consultar</button>
+                </div>
+            </form>
+            <br />
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-danger" id="Message" role="alert">
+                    @ViewBag.Message
+                </div>
+            }
+        </div>
+
+        <div class="container p-10">
+            <div class="chart-container" style="position: relative; margin:auto; height:60vh; width:50vw">
+                <canvas id="myChart1"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    @* <script>
+
+        ////////////////////////////////////////////////////
+        // Search Cliente                                 //
+        /////////////////////////////////////////////////////
+
+        $("#IdCliente").autocomplete({
+            source: function (request, response) {
+                var idCliente = $("#IdCliente").val();
+                //debugger;
+                console.log(idCliente);
+                $.ajax({
+                    type: "GET",
+                    url: "/Cliente/GetClienteByName",
+                    dataType: "json",
+                    data: { filtro: idCliente },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            console.log(item);
+                            //debugger;
+                            return { label: item.nombre + " " + item.apellido1 + " " + item.apellido2, value: item.idCliente };
+                        }));
+                    },
+                    error: function (xhr, status, error) {
+                        // xhr.requestText
+                        // debugger;
+                        console.log(error)
+                        alert("Error: " + error + ", No Error: " + xhr.status);
+                    },
+                });
+            },
+            select: function (event, ui) {
+
+                $("#IdCliente").val(ui.item.value);
+                $("#NombreCliente").html(ui.item.label)
+
+                return false;
+            }
+        });
+    </script> *@
+
+    @* <script type="text/javascript">
+
+        function validateForm() {
+            let divDescripcion = document.getElementById("IdCliente");
+            console.log(divDescripcion.value)
+
+
+            if (divDescripcion.value === "")
+                return false;
+            else
+                return true;
+        }
+
+        function clearMessage() {
+            let divMessage = document.getElementById("Message");
+            // timeout to clear message
+            if (divMessage != null)
+                setTimeout(() => { divMessage.remove(); }, 3000);
+            console.log("bye");
+        }
+
+        clearMessage();
+
+    </script> *@
+
+
+    <script>
+        $(document).ready(function () {
+            Bar();
+        });
+
+        function Bar() {
+            if ("@ViewBag.Valores" == "")
+                return;
+
+            // find myChart Div
+            const ctx = document.getElementById('myChart1');
+            // Get Values
+            let yValues = [@ViewBag.Valores];
+            // Get Etiquetas
+            let etiquetas = "@ViewBag.Etiquetas"
+            console.log(etiquetas)
+
+            // Convert to Array
+            let etiquetasArray = etiquetas.split(",");
+
+            // options
+            var options = {
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        stacked: true,
+                        grid: {
+                            display: true,
+                            color: "rgba(255,99,132,0.2)"
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, {
+                type: 'bar',
+                options: options,
+                data: {
+                    labels: etiquetasArray,
+                    datasets: [{
+                        label: '@ViewBag.GraphTitle',
+                        data: yValues,
+                        borderWidth: 1,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(201, 203, 207, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)',
+                            'rgb(54, 162, 235)',
+                            'rgb(153, 102, 255)',
+                            'rgb(255, 99, 132)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)',
+                            'rgb(54, 162, 235)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'
+                        ],
+                        borderWidth: 1
+                    }]
+                }
+            });
+
+        }
+
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

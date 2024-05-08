@@ -1,0 +1,138 @@
+﻿@model MVCProyectoNFT.Application.DTOs.UsuarioDTO
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br />
+
+<h1>Crear Usuario</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="myForm" asp-action="Create" asp-antiforgery="true"
+              data-ajax="true"
+              data-ajax-method="POST"
+              data-ajax-begin="onBegin"
+              data-ajax-failure="onFailure"
+              data-ajax-success="onSuccess"
+              data-ajax-complete="onComplete">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombreUsuario" class="control-label"></label>
+                <input asp-for="NombreUsuario" class="form-control" />
+                <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdTipoUsuario" class="control-label"></label>
+                <select asp-for="IdTipoUsuario" class="form-control">
+                    <option value="1">Admin</option>
+                    <option value="2">Procesos</option>
+                    <option value="3">Reportes</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+                <span asp-validation-for="IdTipoUsuario" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="DescripcionRol" class="control-label"></label>
+                <input asp-for="DescripcionRol" class="form-control" />
+                <span asp-validation-for="DescripcionRol" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Contrasenna" class="control-label"></label>
+                <input asp-for="Contrasenna" class="form-control" />
+                <span asp-validation-for="Contrasenna" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido1" class="control-label"></label>
+                <input asp-for="Apellido1" class="form-control" />
+                <span asp-validation-for="Apellido1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido2" class="control-label"></label>
+                <input asp-for="Apellido2" class="form-control" />
+                <span asp-validation-for="Apellido2" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div> *@
+            <div class="button-container" style="display: flex; margin-top:20px">
+                <div class="form-group" style="margin-right:10px">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+
+                <div>
+                    <a href="/Usuario" class="btn btn-outline-primary">
+                        Volver
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function onBegin() {
+            console.log("onBegin")
+        }
+
+        function onFailure(response) {
+            console.log("onFailure")
+
+
+            toastr.options.closeDuration = 2000;
+            toastr.options.closeEasing = 'swing';
+            toastr.options.progressBar = true;
+            toastr.error('A ocurrido un error al intentar realizar el registro')
+
+
+        }
+
+        function onSuccess(response) {
+            console.log("onSuccess")
+            // Config
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            // mensaje
+            toastr["success"]("El registro fue salvado", "Atención")
+
+        }
+
+        function onComplete() {
+            console.log("onComplete")
+            // Limpiar los campos del formulario
+            document.getElementById("myForm").reset();
+
+            // Mostrar un mensaje de éxito
+            toastr.info('Los campos del formulario se han limpiado.');
+        }
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

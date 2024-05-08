@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Dueño NFT";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Reporte Info Dueño NFT
+        </div>
+        <div class="card-body">
+
+
+            <form asp-action="DuenoNFTReportPDF"
+                  asp-controller="Reporte"
+                  asp-antiforgery="true"
+                  method="post"
+                  asp-antiforgery="true" onsubmit="return validateForm()">
+
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <label for="nombre" id="label" class="form-label">Nombre</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre del NFT">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-success">Consultar</button>
+                    </div>
+                </div>
+            </form>
+            <br />
+            <br />
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-danger" id="Message" role="alert">
+                    @ViewBag.Message
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+
+        function validateForm() {
+            let divDescripcion = document.getElementById("nombre");
+            console.log(divDescripcion.value)
+
+
+            if (divDescripcion.value === "")
+                return false;
+            else
+                return true;
+        }
+
+        function clearMessage() {
+            let divMessage = document.getElementById("Message");
+            // timeout to clear message
+            if (divMessage != null)
+                setTimeout(() => { divMessage.remove(); }, 3000);
+            console.log("bye");
+        }
+
+        clearMessage();
+
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

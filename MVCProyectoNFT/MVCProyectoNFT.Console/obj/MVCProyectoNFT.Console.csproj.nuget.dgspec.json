@@ -1,0 +1,164 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Console\\MVCProyectoNFT.Console.csproj": {}
+  },
+  "projects": {
+    "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Console\\MVCProyectoNFT.Console.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Console\\MVCProyectoNFT.Console.csproj",
+        "projectName": "MVCProyectoNFT.Console",
+        "projectPath": "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Console\\MVCProyectoNFT.Console.csproj",
+        "packagesPath": "C:\\Users\\INTELEC PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Console\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\INTELEC PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Infraestructure\\MVCProyectoNFT.Infraestructure.csproj": {
+                "projectPath": "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Infraestructure\\MVCProyectoNFT.Infraestructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Infraestructure\\MVCProyectoNFT.Infraestructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Infraestructure\\MVCProyectoNFT.Infraestructure.csproj",
+        "projectName": "MVCProyectoNFT.Infraestructure",
+        "projectPath": "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Infraestructure\\MVCProyectoNFT.Infraestructure.csproj",
+        "packagesPath": "C:\\Users\\INTELEC PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Universidad\\Progra Web 2\\Proyecto\\MVCProyectoNFT\\MVCProyectoNFT.Infraestructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\INTELEC PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2024.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

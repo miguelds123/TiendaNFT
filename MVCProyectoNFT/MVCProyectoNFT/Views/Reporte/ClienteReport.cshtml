@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Cliente PDF";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Reporte Cliente
+        </div>
+        <div class="card-body">
+
+            <br />
+            <form asp-action="ClienteReportPDF"
+                  asp-controller="Reporte"
+                  asp-antiforgery="true"
+                  method="post"
+                  asp-antiforgery="true">
+
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <label for="" class="col-form-label">Cliente</label>
+                    </div>
+
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-success">Descargar PDF</button>
+                    </div>
+                </div>
+            </form>
+            <br />
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-danger" id="Message" role="alert">
+                    @ViewBag.Message
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+
+        function validateForm() {
+            let divDescripcion = document.getElementById("descripcion");
+            console.log(divDescripcion.value)
+
+
+            if (divDescripcion.value === "")
+                return false;
+            else
+                return true;
+        }
+
+        function clearMessage() {
+            let divMessage = document.getElementById("Message");
+            // timeout to clear message
+            if (divMessage != null)
+                setTimeout(() => { divMessage.remove(); }, 3000);
+            console.log("bye");
+        }
+
+        clearMessage();
+
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

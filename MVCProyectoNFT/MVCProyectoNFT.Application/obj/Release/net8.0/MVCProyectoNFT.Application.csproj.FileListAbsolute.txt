@@ -1,0 +1,15 @@
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\bin\Release\net8.0\MVCProyectoNFT.Application.deps.json
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\bin\Release\net8.0\MVCProyectoNFT.Application.dll
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\bin\Release\net8.0\MVCProyectoNFT.Application.pdb
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\bin\Release\net8.0\MVCProyectoNFT.Infraestructure.dll
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\bin\Release\net8.0\MVCProyectoNFT.Infraestructure.pdb
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\obj\Release\net8.0\MVCProyectoNFT.Application.csproj.AssemblyReference.cache
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\obj\Release\net8.0\MVCProyectoNFT.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\obj\Release\net8.0\MVCProyectoNFT.Application.AssemblyInfoInputs.cache
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\obj\Release\net8.0\MVCProyectoNFT.Application.AssemblyInfo.cs
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\obj\Release\net8.0\MVCProyectoNFT.Application.csproj.CoreCompileInputs.cache
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\obj\Release\net8.0\MVCProyectoNFT.Application.csproj.CopyComplete
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\obj\Release\net8.0\MVCProyectoNFT.Application.dll
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\obj\Release\net8.0\refint\MVCProyectoNFT.Application.dll
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\obj\Release\net8.0\MVCProyectoNFT.Application.pdb
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Application\obj\Release\net8.0\ref\MVCProyectoNFT.Application.dll

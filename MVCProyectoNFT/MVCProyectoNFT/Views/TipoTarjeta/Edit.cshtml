@@ -1,0 +1,103 @@
+﻿@model MVCProyectoNFT.Application.DTOs.TipoTarjetaDTO
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<br />
+<br />
+<h1>Editar</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-antiforgery="true"
+              data-ajax="true"
+              data-ajax-method="POST"
+              data-ajax-begin="onBegin"
+              data-ajax-failure="onFailure"
+              data-ajax-success="onSuccess"
+              data-ajax-complete="onComplete">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Descrpcion" class="control-label"></label>
+                <input asp-for="Descrpcion" class="form-control" />
+                <span asp-validation-for="Descrpcion" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="button-container" style="display: flex;">
+                <div class="form-group" style="margin-right: 10px">
+                    <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                </div>
+
+                <div>
+                    <a href="/TipoTarjeta" class="btn btn-outline-primary">
+                        Volver
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    a:hover {
+        color: white;
+    }
+</style>
+
+
+
+@section Scripts {
+    <script>
+        function onBegin() {
+            console.log("onBegin")
+        }
+
+        function onFailure(response) {
+            console.log("onFailure")
+
+
+            toastr.options.closeDuration = 2000;
+            toastr.options.closeEasing = 'swing';
+            toastr.options.progressBar = true;
+            toastr.error('A ocurrido un error al intentar realizar el registro')
+
+
+        }
+
+        function onSuccess(response) {
+            console.log("onSuccess")
+            // Config
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            // mensaje
+            toastr["success"]("El registro fue salvado", "Atención")
+
+        }
+
+        function onComplete() {
+            console.log("onComplete")
+
+        }
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

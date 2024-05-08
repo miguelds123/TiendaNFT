@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Ventas PDF";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Reporte Ventas
+        </div>
+        <div class="card-body">
+
+            <br />
+            <form asp-action="VentasReportPDF"
+                  asp-controller="Reporte"
+                  asp-antiforgery="true"
+                  method="post"
+                  asp-antiforgery="true" onsubmit="return validateForm()">
+
+                <div class="row g-3 align-items-center">
+                    <label for="fechaInicio">Fecha de Inicio:</label>
+                    <input type="date" id="fechaInicio" name="fechaInicio" required>
+
+                    <label for="fechaFin">Fecha de Finalización:</label>
+                    <input type="date" id="fechaFin" name="fechaFin" required>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-success">Consultar</button>
+                    </div>
+                </div>
+            </form>
+            <br />
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-danger" id="Message" role="alert">
+                    @ViewBag.Message
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+
+        function validateForm() {
+            let divDescripcion = document.getElementById("descripcion");
+            console.log(divDescripcion.value)
+
+
+            if (divDescripcion.value === "")
+                return false;
+            else
+                return true;
+        }
+
+        function clearMessage() {
+            let divMessage = document.getElementById("Message");
+            // timeout to clear message
+            if (divMessage != null)
+                setTimeout(() => { divMessage.remove(); }, 3000);
+            console.log("bye");
+        }
+
+        clearMessage();
+
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

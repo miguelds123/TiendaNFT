@@ -1,0 +1,83 @@
+﻿@model IEnumerable<MVCProyectoNFT.Application.DTOs.UsuarioDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+
+<h1>Usuario</h1>
+
+<br />
+
+<div>
+    <a href="/Usuario/Create" class="btn btn-outline-primary">
+        Crear
+    </a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreUsuario)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.IdTipoUsuario)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionRol)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Contrasenna)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreUsuario)
+            </td>
+            @* <td>
+                @Html.DisplayFor(modelItem => item.IdTipoUsuario)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionRol)
+            </td>
+           @*  <td>
+                @Html.DisplayFor(modelItem => item.Contrasenna)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.NombreUsuario }, new { @class = "btn btn-success   bi-pencil-square   " }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.NombreUsuario }, new { @class = "btn btn-secondary   bi-eye-fill   " }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.NombreUsuario }, new { @class = "btn btn-danger   bi-trash  " })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,152 @@
+﻿@model MVCProyectoNFT.Application.DTOs.ClienteDTO
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<br />
+<br />
+<h1>Editar</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="myForm" asp-action="Edit" asp-antiforgery="true"
+              data-ajax="true"
+              data-ajax-method="POST"
+              data-ajax-begin="onBegin"
+              data-ajax-failure="onFailure"
+              data-ajax-success="onSuccess"
+              data-ajax-complete="onComplete">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Cedula" class="control-label"></label>
+                <input asp-for="Cedula" class="form-control" />
+                <span asp-validation-for="Cedula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido1" class="control-label"></label>
+                <input asp-for="Apellido1" class="form-control" />
+                <span asp-validation-for="Apellido1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido2" class="control-label"></label>
+                <input asp-for="Apellido2" class="form-control" />
+                <span asp-validation-for="Apellido2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label"></label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sexo" class="control-label"></label>
+                <select asp-for="Sexo" class="form-control">
+                    <option value="M" selected="@(Model.Sexo == "M")">Masculino</option>
+                    <option value="F" selected="@(Model.Sexo == "F")">Femenino</option>
+                    <option value="O" selected="@(Model.Sexo == "O")">Otro</option>
+                </select>
+
+                <span asp-validation-for="Sexo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaN" class="control-label"></label>
+                <input asp-for="FechaN" class="form-control" />
+                <span asp-validation-for="FechaN" class="text-danger"></span>
+            </div>
+            <div class=" ">
+                <label asp-for="IdPais" class="control-label"></label>
+                @Html.DropDownListFor(m => m.IdPais,
+                         new SelectList(ViewBag.ListPaises, "Id", "Descripcion"), new { @class = "form-select form-select " })
+                <span asp-validation-for="IdPais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <select asp-for="Estado" class="form-control">
+                    <option value="true">Activo</option>
+                    <option value="false">No activo</option>
+                </select>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="button-container" style="display: flex;">
+                <div class="form-group" style="margin-right: 10px">
+                    <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                </div>
+
+                <div>
+                    <a href="/Cliente" class="btn btn-outline-primary">
+                        Volver
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    a:hover {
+        color: white;
+    }
+</style>
+
+
+
+@section Scripts {
+    <script>
+        function onBegin() {
+            console.log("onBegin")
+        }
+
+        function onFailure(response) {
+            console.log("onFailure")
+
+
+            toastr.options.closeDuration = 2000;
+            toastr.options.closeEasing = 'swing';
+            toastr.options.progressBar = true;
+            toastr.error('A ocurrido un error al intentar realizar el registro')
+
+
+        }
+
+        function onSuccess(response) {
+            console.log("onSuccess")
+            // Config
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            // mensaje
+            toastr["success"]("El registro fue salvado", "Atención")
+
+        }
+
+        function onComplete() {
+            console.log("onComplete")
+            
+        }
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,64 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<MVCProyectoNFT.Application.DTOs.TipoTarjetaDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<br>
+
+<br>
+
+<h1 style="margin-right: 10px">Tarjeta</h1>
+
+<br />
+
+<div>
+    <a href="/TipoTarjeta/Create" class="btn btn-outline-primary">
+        Crear
+    </a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoTarjeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descrpcion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdTipoTarjeta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descrpcion)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdTipoTarjeta }, new { @class = "btn btn-success   bi-pencil-square   " }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IdTipoTarjeta }, new { @class = "btn btn-secondary   bi-eye-fill   " }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdTipoTarjeta }, new { @class = "btn btn-danger   bi-trash  " })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page =>
+                Url.Action("Index", new { page }), new PagedListRenderOptions
+            {
+                Display = PagedListDisplayMode.Always,
+                MaximumPageNumbersToDisplay = 5,
+                LiElementClasses = new String[] { "page-item" },
+                PageClasses = new String[] { "page-link" }
+            })

@@ -1,0 +1,28 @@
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\bin\Debug\net8.0\MVCProyectoNFT.Infraestructure.deps.json
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\bin\Debug\net8.0\MVCProyectoNFT.Infraestructure.runtimeconfig.json
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\bin\Debug\net8.0\MVCProyectoNFT.Infraestructure.dll
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\bin\Debug\net8.0\MVCProyectoNFT.Infraestructure.pdb
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.csproj.AssemblyReference.cache
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.AssemblyInfoInputs.cache
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.AssemblyInfo.cs
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.dll
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\refint\MVCProyectoNFT.Infraestructure.dll
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.pdb
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.genruntimeconfig.cache
+C:\Universidad\Progra Web 2\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\ref\MVCProyectoNFT.Infraestructure.dll
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\bin\Debug\net8.0\MVCProyectoNFT.Infraestructure.deps.json
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\bin\Debug\net8.0\MVCProyectoNFT.Infraestructure.runtimeconfig.json
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\bin\Debug\net8.0\MVCProyectoNFT.Infraestructure.dll
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\bin\Debug\net8.0\MVCProyectoNFT.Infraestructure.pdb
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.AssemblyInfo.cs
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.dll
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\refint\MVCProyectoNFT.Infraestructure.dll
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.pdb
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\MVCProyectoNFT.Infraestructure.genruntimeconfig.cache
+C:\Users\INTELEC PC\Downloads\Proyecto\MVCProyectoNFT\MVCProyectoNFT.Infraestructure\obj\Debug\net8.0\ref\MVCProyectoNFT.Infraestructure.dll

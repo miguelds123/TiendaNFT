@@ -1,0 +1,37 @@
+﻿@model MVCProyectoNFT.Application.DTOs.TipoTarjetaDTO
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<br />
+
+<h1>Eliminar</h1>
+
+<br />
+
+<h3>¿Esta seguro que desea borrar este tipo de tarjeta?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdTipoTarjeta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdTipoTarjeta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descrpcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Descrpcion)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a href="/TipoTarjeta" class="btn btn-outline-primary">
+            Volver
+        </a>
+    </form>
+</div>

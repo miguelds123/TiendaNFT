@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MVCProyectoNFT.Application.DTOs.FacturaDetalleDTO>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered text-center" id="detalleFactura">
+        <thead>
+            <tr>
+                @* <th>
+                @Html.DisplayNameFor(model => model.IdFactura)
+                </th> *@
+                <th>
+                    @Html.DisplayNameFor(model => model.IdDetalle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdNft)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreNft)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @* <td>
+                @Html.DisplayFor(modelItem => item.IdFactura)
+                </td> *@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdDetalle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdNft)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreNft)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td align="right">
+                        <button type="button" class="btn btn-danger" onclick="deleteProduct(@item.IdDetalle)">Borrar</button>
+                    </td>
+                    @* <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td> *@
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

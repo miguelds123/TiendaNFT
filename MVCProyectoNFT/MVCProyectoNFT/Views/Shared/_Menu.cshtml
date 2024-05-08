@@ -1,0 +1,92 @@
+﻿<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  bg-black border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light" asp-area="" asp-controller="Home"
+           asp-action="Index">NFT K&M S.A.[@User.Identity!.Name]</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <!--bg-light backgroud icon -->
+            <span class="navbar-toggler-icon bg-light"></span>
+        </button>
+        <div class="navbar-collapse collapse   d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                @if (User.IsInRole("admin") == true || User.IsInRole("procesos") == true)
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Mantenimientos
+                        </a>
+                        <ul class="dropdown-menu bg-black text-light" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-light" href="@Url.Action("Index", "Cliente" )">Cliente</a></li>
+                            <li><a class="dropdown-item text-light" href="@Url.Action("Index", "Nft" )">NFT</a></li>
+                            <li><a class="dropdown-item text-light" href="@Url.Action("Index", "TipoTarjeta" )">Tarjeta</a></li>
+                            <li><a class="dropdown-item text-light" href="@Url.Action("Index", "Pais" )">Pais</a></li>
+                        </ul>
+                    </li>
+                }
+
+                @if (User.IsInRole("admin") == true || User.IsInRole("procesos") == true)
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Procesos
+                        </a>
+                        <ul class="dropdown-menu bg-black text-light" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-light" href="@Url.Action("Index", "Factura")">Facturacion</a></li>
+                            <li><a class="dropdown-item text-light" href="@Url.Action("Anular", "Factura" )">Anular Factura</a></li>
+                        </ul>
+                    </li>
+                }
+
+                @if (User.IsInRole("admin") == true || User.IsInRole("reportes") == true)
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Reportes
+                        </a>
+                        <ul class="dropdown-menu bg-black text-light" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-light" href="@Url.Action("ClienteReport", "Reporte")">Reporte Cliente</a></li>
+                            <li><a class="dropdown-item text-light" href="@Url.Action("NFTReport", "Reporte" )">Reporte NFT </a></li>
+                            <li><a class="dropdown-item text-light" href="@Url.Action("DuenoNFTReport", "Reporte" )">Consulta propietario NFT </a></li>
+                            <li><a class="dropdown-item text-light" href="@Url.Action("VentasReport", "Reporte")">Reporte Ventas</a></li>
+                            <li><hr class="dropdown-divider text-light"></li>
+                            @* <li><a class="dropdown-item text-light" href="@Url.Action("GraficoProductos", "Grafico")">Graficos Productos</a></li> *@
+                            <li><a class="dropdown-item text-light" href="@Url.Action("GraficoVentas", "Grafico")">Graficos Ventas</a></li>
+                            @* <li><a class="dropdown-item text-light" href="@Url.Action("", "Reporte")">Otros</a></li> *@
+
+                        </ul>
+                    </li>
+                }
+
+                @if (User.IsInRole("admin") == true)
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Seguridad
+                        </a>
+                        <ul class="dropdown-menu bg-black text-light" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-light" href="@Url.Action("Index", "Usuario")">Usuario</a></li>
+
+                        </ul>
+                    </li>
+                }
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Calificacion
+                    </a>
+                    <ul class="dropdown-menu bg-black text-light" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text-light" href="@Url.Action("Index", "Autoevaluacion")">Autocalificacion</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-controller="Login" asp-action="LogOff">Salir</a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex">
+            <img class="rounded-circle mx-2 mt-1" src="/Images/profile.png" alt=@User.Identity!.Name width="32px" height="32px" />
+        </div>
+    </div>
+</nav>
